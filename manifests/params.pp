@@ -7,12 +7,12 @@ class authconfig::params () {
     default => ['sssd', 'sssd-client']
   }
   $ldap_packages      = $::operatingsystemmajrelease ? {
-    7       => ['openldap-clients', 'nss-pam-ldapd'],
+    '7'       => ['openldap-clients', 'nss-pam-ldapd'],
     default => ['openldap-clients', 'nss-pam-ldapd', 'pam_ldap']
   }
   $krb5_packages      = ['pam_krb5', 'krb5-workstation']
   $mkhomedir_packages = $::operatingsystemmajrelease ? {
-    5       => ['pam'],
+    '5'       => ['pam'],
     default => ['oddjob-mkhomedir']
   }
   $nis_packages       = ['ypbind']
